@@ -176,7 +176,7 @@ namespace CommandLine
 						instance.isOpen = false;
 						break;
 					default:
-						Console.WriteLine("INVALID RESPONSE");
+						Console.WriteLine("INVALID COMMAND");
 						break;
 				}
 			}
@@ -371,7 +371,7 @@ namespace CommandLine
 			for(int i = 0; i < ingredients.Length; i++)
 			{
 				allIngrediants += ingredients[i];
-				if (i != tags.Length - 1)
+				if (i != ingredients.Length - 1)
 				{
 					allIngrediants += ", ";
 				}
@@ -381,7 +381,7 @@ namespace CommandLine
 			for (int i = 0; i < seasoning.Length; i++)
 			{
 				allSeasoning += seasoning[i];
-				if (i != tags.Length - 1)
+				if (i != seasoning.Length - 1)
 				{
 					allSeasoning += ", ";
 				}
