@@ -60,26 +60,6 @@ namespace CommandLine
 			GetTagData();
 		}
 
-		//generate an Dictionary from the row at the given y index
-		//dictionary will store the data in the cells as the keys and their indexes as the value
-		Dictionary<string, int> GenerateDictionary(string input, int yIndex = 0, char lineBreak = '\r', char unitBreak = '\t')
-		{
-			//remove any extra characters from the string
-			//string extra = "\r";
-			//input = input.Replace(extra, "");
-
-			Dictionary<string, int> output = new Dictionary<string, int>();
-
-			string[] rows = input.Split(lineBreak);
-			string[] dictRow = rows[yIndex].Split(unitBreak);
-
-			for (int i = 0; i < dictRow.Length; i++)
-			{
-				output.Add(dictRow[i], i);
-			}
-			return output;
-		}
-
 		//converts the inputed string into an array
 		string[,] ConvertToStringArray(string input, int initialYIndex = 0, char lineBreak = '\r', char unitBreak = '\t')
 		{
@@ -104,33 +84,6 @@ namespace CommandLine
 				for (int x = 0; x < xLength; x++)
 				{
 					output[x, y] = splitRow[x];
-				}
-			}
-			return output;
-		}
-
-		bool YesOrNo(string question)
-		{
-			bool output = false;
-			bool responded = false;
-			while (responded == false)
-			{
-				Console.WriteLine(question + " [y/n]");
-				string response = Console.ReadLine();
-				if (response == "y" || response == "Y")
-				{
-					//return bool true
-					output = true;
-					responded = true;
-				}
-				else if (response == "n" || response == "N")
-				{
-					output = false;
-					responded = true;
-				}
-				else
-				{
-					Console.WriteLine("INVALID RESPONSE");
 				}
 			}
 			return output;
