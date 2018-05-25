@@ -23,6 +23,8 @@ namespace CommandLine
 
 			//instance.isOpen = true;
 			instance.GetData();
+			Console.WriteLine("RECIPE BOOK" + System.Environment.NewLine);
+			instance.PrintCommandList();
 
 			while (instance.isOpen == true)
 			{
